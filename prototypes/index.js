@@ -23,22 +23,29 @@ const kittyPrompts = {
   orangeKittyNames() {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
+    let orangeKities = kitties.filter(element => element.color === "orange")
+    let orangeNames = []
+    let namesOfKitties = orangeKities.map(function(element){
+    orangeNames.push(element.name)
+    })
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = orangeNames;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Since I have an array of objects, I chose to filter through the ones that have the property of color asigned the value "orange" and assign the result to a variable
+    // Then I created an empty array
+    // Then I maped through orangeKitties and pushed the values assigned to the property of name to the empty array
+    // My result is the new array of orangeNames;
   },
 
   sortByAge() {
     // Sort the kitties by their age
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort((a, b) => (a.age < b.age))
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // I used the sort prototype to iterate through the array of objects, using the argument of a callback function, that takes 2 arguments (a and b). b is the argument that will take precedence in my function, because it's value is the higher between the two. I've used .age to use the sort method for the property of age of each object.
   },
 
   growUp() {
@@ -48,16 +55,20 @@ const kittyPrompts = {
     //   age: 4,
     //   color: 'grey'
     // },
-    // {
+    // {    
     //   name: 'Tiger',
     //   age: 7,
     //   color: 'orange'
     // },
     // ...etc]
+    kitties.forEach(element => element.age +=2)
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties;
     return result;
   }
+
+  // Annotation: 
+  // I used the forEach() method to add 2 to each of the property values.
 };
 
 
@@ -86,8 +97,30 @@ const clubPrompts = {
     //   Pam: ['Drama', 'Art', 'Chess'],
     //   ...etc
     // }
+    let allClubMembers = clubs.map(element => element.members.concat(element.members))
+    let namesWithDuplicates = allClubMembers.reduce((names, element) => names.concat(element))
+    let names = []
+    namesWithDuplicates.forEach(element => {
+        if (!names.includes(element)){
+            names.push(element)
+        }
+    })
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const newObject = {}
+
+    names.forEach(element => newObject[element] = [])
+
+    clubs.map(function(element){
+        Object.values(element)
+        var clubMembers = element.members
+        clubMembers.forEach(function(person){
+            if(names.includes(person)) {
+                newObject[person].push(element.club)
+            }
+        })
+    })
+
+    const result = newObject;
     return result;
 
     // Annotation:
