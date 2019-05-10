@@ -29,11 +29,24 @@ const scope = {
 
     // Log D: personC
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [A Ben, B CardiB, C CardiB, D Paul]
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // first, changePerson() is invoked on line 28
+    // then, changePerson() starts executing
+    // then, we go to line 8, where the if statement is starting running
+    // personB is going to be reasigned to "CardiB" on line 9
+    // after that function beautifyPerson() is going to be invoked on line 10
+    // after that, we'll console log personB, who will now be "Ben"
+    // after that we enter the if statement on line 16
+    // then, personB is goint to be reassigned the value of person, which is "CardiB"
+    // then, personC is going to be reassigned the value of personB, which is "CardiB"
+    // then, person C is goint to be reasssigned the value of personA
+    // then, console log B is going to show "CardiB"
+    // then, person C is going to be reassigned the value of person A
+    // then, person B is going to console log as "CardiB" again
+    // since the console log D takes place after changePerson() is invoked, person C is going to console log now "Paul"
   },
 
   exerciseB() {
