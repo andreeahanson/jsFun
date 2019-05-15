@@ -20,7 +20,7 @@ const context = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    //  since fly is an arrow function, when it is called, this refers to the global object
   },
 
   exerciseB() {
@@ -34,7 +34,8 @@ const context = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // this will return undefined , since this refers to the global window object, and the global object doesn't have a property of value.
+
   },
 
   exerciseC() {
@@ -53,7 +54,7 @@ const context = {
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // It will console.log the button html tag because that is the event object, which is what this refers to in this context. The object "el" is using the method belonging to the object car, since it has been invoked by the click.
   },
 
   exerciseD() {
@@ -76,7 +77,7 @@ const context = {
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // it won't get to that console.log because the callback function assigned to the constant innerFunction is never called, only declared.
   },
 
   exerciseE() {

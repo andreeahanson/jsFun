@@ -76,11 +76,12 @@ const scope = {
 
     // Log D: number
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'undefined';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // result is undefined because nothing is returned anywhere
   },
 
   exerciseC() {
