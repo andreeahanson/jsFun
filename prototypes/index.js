@@ -156,14 +156,29 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = const modPrompts = {
+  studentsPerMod() {
+    const newArray = [];
+    mods.map(el => {
+    const newObject = {};
+      newObject.mod = el.mod
+      newObject.studentsPerInstructor = el.students/el.instructors
+      newArray.push(newObject)
+    })
+    return newArray
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First, I create an empty array
+    // Then, I map through the mods array
+    // while I'm mapping, I'l create a new variable assigned to an empty object
+    // I create the keys for the new object and the values for it by accesing the keys and values in the mods array of objects, by using dot notation.
+    // then I return the new array of objects outside of the map
+    // display the result in the console by using dot notation for the object modPrompts and the invoked method, studentsPerMod().
   }
 };
 
+console.log(modPrompts.studentsPerMod())
 
 
 
@@ -191,11 +206,25 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stockPerCake() {
+    const newCakes = [];
+    cakes.map(el => {
+      const newObject = {};
+      newObject.flavor = el.cakeFlavor;
+      newObject.inStock = el.inStock
+      newCakes.push(newObject)
+    })
+    return newCakes
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First, I create an empty array
+    // Then, I map through the cakes array
+    // while I'm mapping, I'l create a new variable assigned to an empty object
+    // I create the keys for the new object and the values for it by accesing the keys and values in the mods array of objects, by using dot notation.
+    // then I return the new array of objects outside of the map
+    // display the result in the console by using dot notation for the object modPrompts and the invoked method, stockPerCake().
+  }
   },
 
   onlyInStock() {
